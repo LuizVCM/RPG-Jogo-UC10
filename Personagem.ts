@@ -1,8 +1,10 @@
+
+
 import readline from 'readline-sync'
 
 
 
-class Jogador{
+export class Jogador{
    public nome:string;
    public idade: Number;
    public classe: string;
