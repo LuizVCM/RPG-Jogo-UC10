@@ -1,4 +1,4 @@
-class Itens{
+export class Itens{
    Itens:string[]
    nome:string
 constructor(Itens:string[], nome:string){
@@ -12,7 +12,7 @@ public usar(){
     }
 
 
-    class Inventario{
+    export class Inventario{
       private itens: Itens[] = []
 
 
