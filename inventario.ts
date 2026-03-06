@@ -1,38 +1,35 @@
-
-type Item = {
-  nome: string
-  tipo: string
-  nivel: number
-  valor: number
+class Itens{
+   Itens:string[]
+   nome:string
+constructor(Itens:string[], nome:string){
+  this.Itens = Itens
+  this.nome = nome
 }
 
-class Inventario {
-  itens: Item[] = []
+public usar(){
 
-  adicionarItem(item: Item) {
-    this.itens.push(item)
-  }
-
-  listarItens() {
-    if (this.itens.length === 0) {
-      console.log("Inventário vazio!")
-      return
+}
     }
 
-    console.log("📦 Seus itens:")
-    this.itens.forEach((item, index) => {
-      console.log(
-        `${index + 1} - ${item.nome} | Tipo: ${item.tipo} | Nível: ${item.nivel} | Valor: ${item.valor}`
-      )
-    })
-  }
 
-  uparItens() {
-    this.itens.forEach(item => {
-      item.nivel++
-      item.valor += 5
-    })
+    class Inventario{
+      private itens: Itens[] = []
 
-    console.log("✨ Seus itens ficaram mais fortes!")
-  }
-}
+
+      public adicionarItem(itens:Itens){
+        this.itens.push(itens)
+        console.log(`${itens.nome} adicionado ao inventario`)
+      
+      }
+
+      public usarItem(nome:string):boolean{
+        const itemIndex = this.itens.findIndex(itens => itens.nome===nome)
+        if(itemIndex > -1){
+          this.itens[itemIndex].usar()
+          this.itens.splice(itemIndex, 1)
+          return true
+        }
+        return false
+      }
+    
+    }
