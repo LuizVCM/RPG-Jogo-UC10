@@ -25,4 +25,3 @@ export class Chefe extends SubChefe{
     }
 
 }
-
